@@ -1,0 +1,8 @@
+---
+- name: Verificar conectividad con los dispositivos Nokia
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: Hacer ping a los dispositivos
+      ansible.builtin.ping:
