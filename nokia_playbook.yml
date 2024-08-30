@@ -1,0 +1,35 @@
+---
+- name: Playbook básico para dispositivos Nokia
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: Verificar conectividad SSH
+      ping:
+
+    - name: Mostrar versión del sistema operativo
+      ansible.builtin.command:
+        cmd: "show version"
+      register: version_output
+
+    - name: Mostrar salida de la versión del sistema operativo
+      ansible.builtin.debug:
+        var: version_output.stdout_lines
+
+    - name: Obtener la configuración de interfaces
+      ansible.builtin.command:
+        cmd: "show interfaces"
+      register: interfaces_output
+
+    - name: Mostrar la configuración de interfaces
+      ansible.builtin.debug:
+        var: interfaces_output.stdout_lines
+
+    - name: Guardar la configuración actual
+      ansible.builtin.command:
+        cmd: "admin save"
+      register: save_output
+
+    - name: Mostrar resultado de la operación de guardado
+      ansible.builtin.debug:
+        var: save_output.stdout_lines
