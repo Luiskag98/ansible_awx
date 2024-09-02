@@ -1,6 +1,6 @@
 ---
 - name: Verificar conectividad con los dispositivos Nokia
-  hosts: all
+  hosts: localhost
   gather_facts: no
 
   tasks:
