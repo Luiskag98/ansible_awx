@@ -1,11 +1,11 @@
 ---
 - name: Playbook básico para dispositivos Nokia
-  hosts: localhost
+  hosts: all
   gather_facts: no
 
   tasks:
-    - name: Verificar conectividad SSH
-      ping:
+    # - name: Verificar conectividad SSH
+    #   ping:
 
     - name: Mostrar versión del sistema operativo
       ansible.builtin.command:
