@@ -1,6 +1,6 @@
 ---
 - name: Playbook básico para dispositivos Nokia
-  hosts: all
+  hosts: localhost
   gather_facts: no
 
   tasks:
